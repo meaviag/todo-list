@@ -3,7 +3,7 @@
 @section('content')
 <form action="{{ route('autho') }}" method="post">
     @csrf
-    <div class="container">
+    <div class="container mt-5">
         <h3>Авторизоваться</h3>
         <div class="mb-3">
             <label for="email" class="form-label">Электронная почта</label>
@@ -22,10 +22,11 @@
         @enderror
         <div class="mb-3 form-check">
             <input type="checkbox" class="form-check-input" name="remember" id="remember">
-            <label class="form-check-label" for="remember">Запомнить меня</label>
+            <label class="form-check-label" for="remember">Запомнить меня</label> 
             <a href="#">Забыли пароль?</a>
         </div>
         <button type="submit" class="btn btn-primary">Авторизоваться</button>
+        У вас нет аккаунта?<a href="{{ route('registration') }}">Зарегистрируйтесь.</a>
     </div>
 </form>
 @endsection

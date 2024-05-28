@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TaskRequest;
+use App\Models\Task;
 use Illuminate\Http\Request;
 
 class TasksController extends Controller
@@ -11,17 +13,21 @@ class TasksController extends Controller
         return view('tasks');
     }
 
-    public function store(UserRequest $request)
+    public function store(TaskRequest $request)
     {
-        $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'password' => $request->password,
+        $task = Task::create([
+            'tasks' => $request->tasks,
         ]);
-        $user->save();
+        return;
+        // $user = User::create([
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'password' => $request->password,
+        // ]);
+        // $user->save();
 
-        Auth::login($user);
+        // Auth::login($user);
 
-        return redirect(RouteServiceProvider::HOME);
+        // return redirect(RouteServiceProvider::HOME);
     }
 }

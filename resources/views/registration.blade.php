@@ -3,7 +3,7 @@
 @section('content')
 <form action="{{route('registration')}}" method="post">
     @csrf
-    <div class="container">
+    <div class="container mt-5">
         <h3>Регистрация</h3>
         <div class="mb-3">
             <label for="name" class="form-label">Имя</label>
@@ -36,7 +36,7 @@
             <p class="alert alert-danger ">{{ $message }}</p>
         @enderror
         <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
-        <a href="#">Уже зарегистрированы?</a>
+        <a href="{{ route('autho') }}">Уже зарегистрированы?</a>
     </div>
 </form>
 @endsection

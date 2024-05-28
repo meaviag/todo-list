@@ -31,7 +31,7 @@ class AuthController extends Controller
         }
         $request->session()->regenerate();
 
-        return redirect()->intended(RouteServiceProvider::HOME);
+        return redirect()->route('tasks');
     }
 
     public function destroy(Request $request)

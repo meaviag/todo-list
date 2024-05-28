@@ -21,7 +21,7 @@ class UserRequest extends FormRequest
      */
     public function rules(): array
     {
-        return [
+        return [ //валидация к регистрации
             'name' => 'required|string',
             'email' => 'required|string|email|unique:users',
             'password' => 'required|confirmed|min:8'

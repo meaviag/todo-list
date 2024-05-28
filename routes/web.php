@@ -10,6 +10,8 @@ Route::get('/main', function () {
     return view('index');
 })->name('home');
 
+Route::view('/training', 'train')->name('train');
+
 
 Route::get('/registration', [UserController::class, 'create'])->middleware('guest')->name('registration');
 Route::post('/registration', [UserController::class, 'store'])->middleware('guest');
